@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -14,16 +14,12 @@ contract NFT is ERC721URIStorage {
 
     constructor(
         string memory _name,
-        string memory _symbol,
-        uint256 _cost
+        string memory _symbol
     ) ERC721(_name, _symbol) {
         owner = msg.sender;
-        cost = _cost;
     }
 
     function mint(string memory tokenURI) public payable {
-        require(msg.value >= cost);
-
         _tokenIds.increment();
 
         uint256 newItemId = _tokenIds.current();
