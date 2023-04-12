@@ -1,6 +1,6 @@
 import PocketBase from 'pocketbase';
 
-const client = new PocketBase('https://abiding-sundown.pockethost.io');
+const client = new PocketBase('https://fluffy-woman.pockethost.io');
 
 export const getAllNFTs = async () => {
   try {

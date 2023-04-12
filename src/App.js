@@ -67,6 +67,7 @@ function App() {
 
   const submitHandler = async (e) => {
     e.preventDefault();
+    console.log(data);
 
     if (name === '' || description === '') {
       window.alert('Please provide a name and description');
@@ -166,7 +167,6 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(data);
     if (minted) {
       saveNFT(data);
     }
